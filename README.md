@@ -4,7 +4,7 @@ How To
 ```
 # Update repo and install kernel-headers
 sudo apt update
-sudo apt install raspberrypi-kernel-headers
+sudo apt install raspberrypi-kernel-headers bc
 
 # Build
 make 
