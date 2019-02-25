@@ -94,7 +94,8 @@ CONFIG_RTW_SDIO_PM_KEEP_POWER = y
 ###################### MP HW TX MODE FOR VHT #######################
 CONFIG_MP_VHT_HW_TX_MODE = n
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
+CONFIG_RASPBIAN = y
+CONFIG_PLATFORM_I386_PC = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
 CONFIG_PLATFORM_JB_X86 = n
@@ -222,6 +223,19 @@ EXTRA_CFLAGS += -I$(src)/hal/btc
 _BTC_FILES += hal/btc/halbtc8723bwifionly.o \
 				hal/btc/halbtc8822bwifionly.o \
 				hal/btc/halbtc8821cwifionly.o
+ifeq ($(CONFIG_RASPBIAN), y)
+	EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+	EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211
+	EXTRA_CFLAGS += -DRTW_USE_CFG80211_STA_EVENT # only enable when kernel >= 3.2
+	EXTRA_CFLAGS += -DCONFIG_P2P_IPS
+ARCH := arm
+CROSS_COMPILE := arm-linux-gnueabihf-
+KVER := $(shell uname -r)
+KSRC ?= /lib/modules/$(KVER)/build
+MODULE_NAME := 8723bu
+MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
+endif
+
 ifeq ($(CONFIG_BT_COEXIST), y)
 _BTC_FILES += hal/btc/halbtc8192e1ant.o \
 				hal/btc/halbtc8192e2ant.o \
