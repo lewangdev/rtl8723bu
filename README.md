@@ -18,7 +18,7 @@ make mrproper
 
 # 获取当前内核的配置或者通过下面命令来配置
 sudo modprobe configs
-sudo -dc /proc/config.gz > .config
+sudo gzip -dc /proc/config.gz > .config
 
 # Pi 2, Pi 3, Pi 3+, CM3 直接生成配置
 #KERNEL=kernel7
