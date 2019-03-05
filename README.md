@@ -90,7 +90,9 @@ sudo modprobe -v 8723bu
 8723bu
 ```
 
-## 对于 CM3/CM3+ 可以在修改 `/boot/config.txt` 修改默认的 GPIO 配置，例如
+## 修改默认的 GPIO 配置
+
+对于 CM3/CM3+ 可以在修改 `/boot/config.txt` 
 
 ```
 # Enable WiFi when boot. Set GPIO42 to be an output set to 1
