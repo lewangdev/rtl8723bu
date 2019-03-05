@@ -26,19 +26,20 @@ Description: Raspberry Pi bootloader
 ```
 
 可以看到当前版本号是 `1.20181112-1`.
-如果执行过 `sudo apt update`, 那么在安装 `raspberry-kernel-headers` 包时要指定版本号，要与内核包版本号一致。
+如果执行过 `sudo apt update`, 那么在安装 `raspberrypi-kernel-headers` 包时要指定版本号，要与内核包版本号一致。
 
 
 ## [推荐]通过 apt 安装 `raspberrypi-kernel-headers`
 
 ```
-sudo apt install raspberry-kernel-headers=1.20181112-1
+sudo apt install raspberrypi-kernel-headers=1.20181112-1
 ```
 
 ## 手动通过源码安装 `raspberrypi-kernel-headers`
 
 ```
 # 下载对应版本的内核源码 
+mkdir -p ~/Downloads && cd ~/Downloads
 wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20181112-1.tar.gz
 tar -zxvf raspberrypi-kernel_1.20181112-1.tar.gz
 sudo mv ~/Downloads/linux-raspberrypi-kernel_1.20181112-1 /usr/src/4.14.79-v7+
