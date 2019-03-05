@@ -1,9 +1,8 @@
-How To
-=====
+如何编译驱动
+============
 
 ```
 # 安装编译驱动需要的工具
-sudo apt update
 sudo apt install bc
 
 # 下载对应版本的内核源码 
