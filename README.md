@@ -21,14 +21,13 @@ sudo modprobe configs
 sudo gzip -dc /proc/config.gz > .config
 
 # Pi 2, Pi 3, Pi 3+, CM3 直接生成配置
-#KERNEL=kernel7
-#make bcm2709_defconfig
+#KERNEL=kernel7 make bcm2709_defconfig
 
 # 生成编译内核所需要的文件
 make modules_prepare
 
 # 获取对应版本内核编译时生成的内核模块导出符号文件
-wget https://raw.githubusercontent.com/raspberrypi/firmware/1.20181112/extra/Module.symvers
+curl -Ss https://raw.githubusercontent.com/raspberrypi/firmware/1.20181112/extra/Module7.symvers -o Module.symvers
 
 # 回到驱动所在目录编译驱动
 make 
