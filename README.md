@@ -95,8 +95,8 @@ sudo modprobe -v 8723bu
 对于 CM3/CM3+ 可以在修改 `/boot/config.txt` 
 
 ```
-# Enable WiFi when boot. Set GPIO42 to be an output set to 1
-gpio=42=op,dh
+# Enable WiFi when boot. Set GPIO43 to be an output and set to 1
+gpio=43=op,dh
 ```
 
 ## 添加 WiFi 配置
