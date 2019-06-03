@@ -90,7 +90,7 @@ sudo modprobe -v 8723bu
 8723bu
 ```
 
-## 修改默认的 GPIO 配置
+## [可选]修改默认的 GPIO 配置(只适用于慧通科技出品的CM3网关产品)
 
 对于 CM3/CM3+ 可以在修改 `/boot/config.txt` 
 
